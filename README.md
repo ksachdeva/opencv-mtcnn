@@ -41,14 +41,24 @@ cmake --build .
 cd build
 ./sample/app <path_to_models_dir> <path_to_test_image>
 
-# here is an example cmd line to run with the model and image in the test repository
+# here are some example cmd lines to run with the model and images in the test repository
+
+# An image with 0 human faces (have picture of 4 dogs)
+./sample/app ../data/models ../data/dogs.jpg
+
+# An image with 1 face
 ./sample/app ../data/models ../data/Aaron_Peirsol_0003.jpg
+
+# An image with 7 faces
+./sample/app ../data/models ../data/2007_007763.jpg
 ```
 
 ## Acknowledgments
 
-Most of the implementations of MTCNN are based on either Caffe or Tensorflow. I wanted to play with OpenCV's DNN implementation and understand the paper bit better. While implementing it, I did look at various other C++ implementations (again all of them use Caffe) and more specifically borrowed utilities from https://github.com/golunovas/mtcnn-cpp. IMHO, I found his implementation (in C++) that is based on Caffe to be the cleanest amongst many others.
+Most of the implementations of MTCNN are based on either Caffe or Tensorflow. I wanted to play with OpenCV's DNN implementation and understand the paper bit better. While implementing it, I looked at various other C++ implementations (again all of them use Caffe) and more specifically borrowed utilities from https://github.com/golunovas/mtcnn-cpp. IMHO, I found his implementation (in C++) that is based on Caffe to be the cleanest amongst many others.
 
 The model files are taken from https://github.com/kpzhang93/MTCNN_face_detection_alignment/tree/master/code
 
 The image file "Aaron_Peirsol_0003.jpg" is from the LFW database (http://vis-www.cs.umass.edu/lfw/)
+
+The image files "dog.jpg" & "2007_007763.jpg" are from dlib's github repository (https://github.com/davisking/dlib/blob/master/examples/faces)

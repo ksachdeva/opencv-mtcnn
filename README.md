@@ -53,6 +53,12 @@ cd build
 ./sample/app ../data/models ../data/2007_007763.jpg
 ```
 
+## Result
+
+Here is an example of how the execution of the sample application looks like
+
+![Result](data/2007_007763_result.jpg)
+
 ## Acknowledgments
 
 Most of the implementations of MTCNN are based on either Caffe or Tensorflow. I wanted to play with OpenCV's DNN implementation and understand the paper bit better. While implementing it, I looked at various other C++ implementations (again all of them use Caffe) and more specifically borrowed utilities from https://github.com/golunovas/mtcnn-cpp. IMHO, I found his implementation (in C++) that is based on Caffe to be the cleanest amongst many others.

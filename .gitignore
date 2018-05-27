@@ -35,3 +35,4 @@ build
 _debug
 _release
 _xdebug
+.vscode

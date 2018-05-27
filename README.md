@@ -39,10 +39,10 @@ cmake --build .
 ```bash
 # running the sample application
 cd build
-./sample/MTCNNSampleApp <path_to_models_dir> <path_to_test_image>
+./sample/app <path_to_models_dir> <path_to_test_image>
 
 # here is an example cmd line to run with the model and image in the test repository
-./sample/MTCNNSampleApp ../data/models ../data/Aaron_Peirsol_0003.jpg
+./sample/app ../data/models ../data/Aaron_Peirsol_0003.jpg
 ```
 
 ## Acknowledgments
@@ -52,5 +52,3 @@ Most of the implementations of MTCNN are based on either Caffe or Tensorflow. I 
 The model files are taken from https://github.com/kpzhang93/MTCNN_face_detection_alignment/tree/master/code
 
 The image file "Aaron_Peirsol_0003.jpg" is from the LFW database (http://vis-www.cs.umass.edu/lfw/)
-
-

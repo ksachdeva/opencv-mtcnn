@@ -1,5 +1,5 @@
 #configure variables
-set (SAMPLE_NAME "${PROJECT_NAME}SampleApp")
+set (SAMPLE_NAME "app")
 
 #configure directories
 set (SAMPLE_PATH "${PROJECT_SOURCE_DIR}/sample")
@@ -14,7 +14,7 @@ FIND_PACKAGE(Boost 1.58 COMPONENTS filesystem REQUIRED)
 #set includes
 include_directories (
     ${SAMPLE_INCLUDE_PATH}
-    ${LIB_INCLUDE_PATH}
+    ${MTCNN_LIB_INCLUDE_PATH}
 )
 
 #set sources
@@ -41,7 +41,7 @@ target_link_libraries (
     ${SAMPLE_NAME}
     ${OpenCV_LIBRARIES}
     ${Boost_LIBRARIES}
-    ${LIB_NAME}
+    ${MTCNN_LIB_NAME}
     ${LINK_OPTIONS})
 
 #test

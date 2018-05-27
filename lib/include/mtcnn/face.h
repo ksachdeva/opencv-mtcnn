@@ -1,5 +1,5 @@
-#ifndef _include_opencv_mtcnn_ds_h_
-#define _include_opencv_mtcnn_ds_h_
+#ifndef _include_opencv_mtcnn_face_h_
+#define _include_opencv_mtcnn_face_h_
 
 #include <opencv2/opencv.hpp>
 

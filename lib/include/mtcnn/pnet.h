@@ -1,7 +1,7 @@
 #ifndef _include_opencv_pnet_h_
 #define _include_opencv_pnet_h_
 
-#include "data-structures.h"
+#include "face.h"
 #include <iostream>
 #include <opencv2/dnn.hpp>
 

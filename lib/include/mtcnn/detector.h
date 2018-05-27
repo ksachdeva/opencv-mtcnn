@@ -1,7 +1,7 @@
 #ifndef _include_opencv_mtcnn_detector_h_
 #define _include_opencv_mtcnn_detector_h_
 
-#include "data-structures.h"
+#include "face.h"
 #include "onet.h"
 #include "pnet.h"
 #include "rnet.h"

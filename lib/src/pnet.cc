@@ -1,5 +1,4 @@
 #include "mtcnn/pnet.h"
-#include <opencv2/core/utils/trace.hpp>
 
 const float P_NET_WINDOW_SIZE = 12.f;
 const int P_NET_STRIDE = 2;

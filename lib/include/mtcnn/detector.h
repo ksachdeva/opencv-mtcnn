@@ -5,7 +5,6 @@
 #include "onet.h"
 #include "pnet.h"
 #include "rnet.h"
-#include <string>
 
 class MTCNNDetector {
 private:

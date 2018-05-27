@@ -2,7 +2,6 @@
 #define _include_opencv_pnet_h_
 
 #include "face.h"
-#include <iostream>
 #include <opencv2/dnn.hpp>
 
 class ProposalNetwork {

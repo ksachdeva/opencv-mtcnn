@@ -5,11 +5,6 @@
 #include <opencv2/highgui.hpp>
 #include <opencv2/imgproc.hpp>
 
-#include <cstdlib>
-#include <functional>
-#include <iostream>
-#include <utility>
-
 #include <mtcnn/detector.h>
 
 namespace fs = boost::filesystem;

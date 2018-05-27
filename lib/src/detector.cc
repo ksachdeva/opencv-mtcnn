@@ -27,17 +27,11 @@ std::vector<Face> MTCNNDetector::detect(const cv::Mat &img,
   // Run Proposal Network to find the initial set of faces
   std::vector<Face> faces = _pnet->run(rgbImg, minFaceSize, scaleFactor);
 
-  std::cout << "Total faces after pnet --> " << faces.size() << std::endl;
-
   // Run Refine network on the output of the Proposal network
   faces = _rnet->run(rgbImg, faces);
 
-  std::cout << "Total faces after rnet --> " << faces.size() << std::endl;
-
   // Run Output network on the output of the Refine network
   faces = _onet->run(rgbImg, faces);
-
-  std::cout << "Total faces after onet --> " << faces.size() << std::endl;
 
   for (size_t i = 0; i < faces.size(); ++i) {
     std::swap(faces[i].bbox.x1, faces[i].bbox.y1);

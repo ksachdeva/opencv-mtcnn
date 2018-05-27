@@ -1,5 +1,6 @@
 #include <boost/filesystem.hpp>
 #include <boost/filesystem/path.hpp>
+#include <boost/timer/timer.hpp>
 
 #include <opencv2/dnn.hpp>
 #include <opencv2/highgui.hpp>
@@ -55,7 +56,16 @@ int main(int argc, char **argv) {
 
   MTCNNDetector detector(pConfig, rConfig, oConfig);
   cv::Mat img = cv::imread(argv[2]);
-  std::vector<Face> faces = detector.detect(img, 20.f, 0.709f);
+
+  std::vector<Face> faces;
+
+  {
+    boost::timer::auto_cpu_timer t(3, "%w seconds\n");
+    faces = detector.detect(img, 20.f, 0.709f);
+  }
+
+  std::cout << "Number of faces found in the supplied image - " << faces.size()
+            << std::endl;
 
   std::vector<rectPoints> data;
 

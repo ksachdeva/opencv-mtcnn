@@ -27,8 +27,18 @@ std::vector<Face> MTCNNDetector::detect(const cv::Mat &img,
   // Run Proposal Network to find the initial set of faces
   std::vector<Face> faces = _pnet->run(rgbImg, minFaceSize, scaleFactor);
 
+  // Early exit if we do not have any faces
+  if (faces.empty()) {
+    return faces;
+  }
+
   // Run Refine network on the output of the Proposal network
   faces = _rnet->run(rgbImg, faces);
+
+  // Early exit if we do not have any faces
+  if (faces.empty()) {
+    return faces;
+  }
 
   // Run Output network on the output of the Refine network
   faces = _onet->run(rgbImg, faces);

@@ -9,7 +9,7 @@ set (SAMPLE_INCLUDE_PATH "${SAMPLE_PATH}/include")
 find_package(OpenCV REQUIRED)
 
 set(Boost_USE_STATIC_LIBS   ON)
-FIND_PACKAGE(Boost 1.58 COMPONENTS filesystem timer REQUIRED)
+FIND_PACKAGE(Boost 1.58 COMPONENTS filesystem timer REQUIRED chrono)
 
 #set includes
 include_directories (

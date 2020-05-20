@@ -14,9 +14,17 @@ std::vector<Face> MTCNNDetector::detect(const cv::Mat &img,
 
   cv::Mat rgbImg;
   if (img.channels() == 3) {
-    cv::cvtColor(img, rgbImg, CV_BGR2RGB);
+    if (CV_VERSION_MAJOR >= 4) {
+      cv::cvtColor(img, rgbImg, cv::COLOR_BGR2RGB);
+    } else {
+      cv::cvtColor(img, rgbImg, CV_BGR2RGB);
+    }
   } else if (img.channels() == 4) {
-    cv::cvtColor(img, rgbImg, CV_BGRA2RGB);
+    if (CV_VERSION_MAJOR >= 4) {
+      cv::cvtColor(img, rgbImg, cv::COLOR_BGRA2RGB);
+    } else {
+      cv::cvtColor(img, rgbImg, CV_BGRA2RGB);
+    }
   }
   if (rgbImg.empty()) {
     return std::vector<Face>();

@@ -9,7 +9,7 @@ set (SAMPLE_INCLUDE_PATH "${SAMPLE_PATH}/include")
 find_package(OpenCV REQUIRED)
 
 set(Boost_USE_STATIC_LIBS   ON)
-FIND_PACKAGE(Boost 1.58 COMPONENTS filesystem timer REQUIRED)
+FIND_PACKAGE(Boost 1.58 REQUIRED COMPONENTS filesystem timer system)
 
 #set includes
 include_directories (
@@ -42,7 +42,8 @@ target_link_libraries (
     ${OpenCV_LIBRARIES}
     ${Boost_LIBRARIES}
     ${MTCNN_LIB_NAME}
-    ${LINK_OPTIONS})
+    ${LINK_OPTIONS}
+    Boost::system)
 
 #test
 enable_testing ()
